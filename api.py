@@ -11,7 +11,7 @@ def metadata_query(params):
     :return: _description_
     :rtype: _type_
     """
-    return requests.post("https://api.nb.no/dhlab/metadata_query", json=params)
+    return requests.post("https://api.nb.no/dhlab/metadata_query", json=params).json()
 
 
 def metadata_from_urn(params):
@@ -26,4 +26,4 @@ def metadata_from_urn(params):
     :return: requests
     :rtype: requests object
     """
-    return requests.post("https://api.nb.no/dhlab/metadata_from_urn", json=params)
+    return requests.post("https://api.nb.no/dhlab/metadata_from_urn", json=params).json()
