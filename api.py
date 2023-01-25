@@ -14,7 +14,7 @@ def metadata_query(params):
     return requests.post("https://api.nb.no/dhlab/metadata_query", json=params).json()
 
 
-def metadata_from_urn(params):
+def metadata_from_urn(urns):
     """Get Marc 21 json records for urns.
     Query on the form:
     {
@@ -26,4 +26,5 @@ def metadata_from_urn(params):
     :return: requests
     :rtype: requests object
     """
+    params = {"urns" : urns}
     return requests.post("https://api.nb.no/dhlab/metadata_from_urn", json=params).json()

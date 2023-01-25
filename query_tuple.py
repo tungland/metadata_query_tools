@@ -38,7 +38,10 @@ def tuple_to_json(tup, limit = 5):
         
     return dct  
 
-def query(query_tpl):
+def query(*query_tpls):
+    for tpl in query_tpls:
+        
+   
    
    query_json = tuple_to_json(query_tpl) 
    return metadata_query(query_json) 
