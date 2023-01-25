@@ -1,5 +1,6 @@
 """Tools for querying the Norwegian National Bibliography Marc 21
 """
+from api import metadata_query
 
 def tuple_to_json(tup, limit = 5):
     """Takes tuple on the form:
@@ -36,5 +37,9 @@ def tuple_to_json(tup, limit = 5):
             })
         
     return dct  
-    
+
+def query(query_tpl):
+   
+   query_json = tuple_to_json(query_tpl) 
+   return metadata_query(query_json) 
     
