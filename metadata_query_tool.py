@@ -3,6 +3,7 @@ import requests
 
 BASEPATH = "https://api.nb.no/dhlab"
 
+
 def api_call_deco(service):
     """Decorator for calling a service from DH-lab API
 
@@ -28,11 +29,13 @@ def metadata_query(conditions, limit=5):
     return params
 
 @api_call_deco("metadata_from_urn")
-def metadata_from_urn(urns):
+def metadata_from_urn(urns, fields=None):
     """Gets MARC 21 json for a URN or list of URN
 
     :param urns: list of URNs
+    :param fields: list of marc 21 fields to return
     :return: API call parameters
     """
-    params = {"urns" : urns}
+    params = {"urns" : urns,
+              "fields" : fields}
     return params
